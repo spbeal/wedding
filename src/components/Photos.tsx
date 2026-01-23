@@ -1,8 +1,6 @@
 import { Box, Container, Typography, Grid, Card, CardMedia } from '@mui/material';
 import { useState } from 'react';
 
-// Add your story photos here - import them from src/assets/images/
-// Example: import photo1 from '../assets/images/photo1.jpg';
 const photoPaths: string[] = [];
 
 export default function Photos() {
@@ -50,7 +48,7 @@ export default function Photos() {
         {photoPaths.length > 0 ? (
           <Grid container spacing={3}>
             {photoPaths.map((path, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Grid key={index}>
                 <Card
                   sx={{
                     overflow: 'hidden',
