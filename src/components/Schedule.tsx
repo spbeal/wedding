@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Paper, Stack, Divider } from '@mui/material';
+import { Box, Container, Typography, Paper, Stack } from '@mui/material';
 import { Schedule as ScheduleIcon } from '@mui/icons-material';
 
 interface ScheduleItem {

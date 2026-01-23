@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Card, CardMedia, Alert } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardMedia } from '@mui/material';
 import { useState } from 'react';
 
 // Add your story photos here - import them from src/assets/images/

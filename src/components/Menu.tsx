@@ -75,7 +75,7 @@ export default function Menu() {
 
         <Grid container spacing={4}>
           {menuCategories.map((category, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid key={index}>
               <Card
                 sx={{
                   height: '100%',

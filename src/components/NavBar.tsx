@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Box, Button, useScrollTrigger, Slide } from '@mui/material';
+import { AppBar, Toolbar, Button, useScrollTrigger, Slide } from '@mui/material';
 import { useState, useEffect } from 'react';
 
 interface Props {
