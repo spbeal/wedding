@@ -227,7 +227,7 @@ export default function RSVP() {
               justifyContent: 'center',
             }}
           >
-            Please respond by May 1st, 2025
+            Please respond by May 15th, 2026
           </Typography>
         </Box>
       </Container>
