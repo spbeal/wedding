@@ -33,6 +33,9 @@ export default function ColorPicker({ onColorChange }: ColorPickerProps) {
         bottom: 24,
         right: 24,
         zIndex: 1000,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
       }}
     >
       <Collapse in={open}>

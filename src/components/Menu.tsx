@@ -73,7 +73,7 @@ export default function Menu() {
           Menu
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {menuCategories.map((category, index) => (
             <Grid key={index}>
               <Card

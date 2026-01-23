@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Photos from './components/Photos';
 import SaveTheDate from './components/SaveTheDate';
 import Schedule from './components/Schedule';
+import Location from './components/Location';
 import Menu from './components/Menu';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
@@ -95,7 +96,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'photos', 'save-the-date', 'schedule', 'menu', 'rsvp'];
+      const sections = ['hero', 'photos', 'save-the-date', 'schedule', 'location', 'menu', 'rsvp'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -128,6 +129,7 @@ function App() {
       </Box>
       <Photos />
       <SaveTheDate />
+      <Location />
       <Schedule />
       <Menu />
       <RSVP />

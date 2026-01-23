@@ -217,7 +217,7 @@ export default function RSVP() {
             </Button>
           </Box>
           <Typography
-            variant="body2"
+            variant="body"
             sx={{
               mt: 4,
               fontStyle: 'italic',

@@ -1,10 +1,10 @@
 import { Box, Container, Typography, Grid, Card, CardMedia } from '@mui/material';
 import { useState } from 'react';
-import card1 from '../assets/images/3.png';
-import card2 from '../assets/images/Back.png';
-import card3 from '../assets/images/Front.png';
+import rsvp from '../assets/images/3.png';
+import us from '../assets/images/Back.png';
+import save_the_date from '../assets/images/Front.png';
 
-const saveTheDateCards = [card1, card2, card3];
+const saveTheDateCards = [save_the_date, us, rsvp];
 
 export default function SaveTheDate() {
   const [loadedImages, setLoadedImages] = useState<Set<string | unknown>>(new Set());

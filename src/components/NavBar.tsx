@@ -8,6 +8,7 @@ interface Props {
 const sections = [
   { id: 'photos', label: 'Our Story' },
   { id: 'save-the-date', label: 'Save The Date' },
+  { id: 'location', label: 'Location' },
   { id: 'schedule', label: 'Schedule' },
   { id: 'menu', label: 'Menu' },
   { id: 'rsvp', label: 'RSVP' },
@@ -51,9 +52,19 @@ export default function NavBar({ activeSection }: Props) {
           background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
           boxShadow: scrolled ? 2 : 0,
           transition: 'all 0.3s ease',
+          backdropFilter: scrolled ? 'blur(10px)' : 'none',
         }}
       >
-        <Toolbar sx={{ justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+        <Toolbar 
+          sx={{ 
+            justifyContent: 'center', 
+            gap: { xs: 1, sm: 2 },
+            flexWrap: 'wrap',
+            px: { xs: 1, sm: 2 },
+            py: { xs: 1, sm: 0 },
+            minHeight: { xs: '56px', sm: '64px' },
+          }}
+        >
           {sections.map((section) => (
             <Button
               key={section.id}
@@ -65,6 +76,9 @@ export default function NavBar({ activeSection }: Props) {
                 borderColor: activeSection === section.id 
                   ? (scrolled ? 'primary.main' : 'white')
                   : 'transparent',
+                fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
+                padding: { xs: '6px 8px', sm: '8px 16px' },
+                minWidth: { xs: 'auto', sm: '64px' },
                 '&:hover': {
                   backgroundColor: 'transparent',
                   borderColor: scrolled ? 'primary.main' : 'white',
