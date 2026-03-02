@@ -180,9 +180,34 @@ export default function RSVP() {
             >
               <EmailIcon sx={{ color: 'primary.main', fontSize: 32 }} />
               <Link
-                href="mailto:sampbeal@gmail.com"
+                href="mailto:bugolove1234@gmail.com "
                 sx={{
                   fontSize: '1.5rem',
+                  color: 'primary.main',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                bugolove1234@gmail.com 
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 2,
+                flexWrap: 'wrap',
+              }}
+            >
+              <EmailIcon sx={{ color: 'primary.main', fontSize: 16 }} />
+              <Link
+                href="mailto:sampbeal@gmail.com"
+                sx={{
+                  fontSize: '1rem',
                   color: 'primary.main',
                   textDecoration: 'none',
                   fontWeight: 600,

@@ -1,4 +1,5 @@
-import { Box, Container, Typography, Paper, Stack } from '@mui/material';
+import { useState } from 'react';
+import { Box, Container, Typography, Paper, Stack, Card, CardContent, Button } from '@mui/material';
 import { Schedule as ScheduleIcon } from '@mui/icons-material';
 
 interface ScheduleItem {
@@ -54,6 +55,8 @@ const scheduleItems: ScheduleItem[] = [
 ];
 
 export default function Schedule() {
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+
   return (
     <Box
       id="schedule"
@@ -85,85 +88,110 @@ export default function Schedule() {
           Wedding Schedule
         </Typography>
 
-        <Box sx={{ maxWidth: 800, mx: 'auto' }}>
-          <Stack spacing={4}>
-            {scheduleItems.map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: 'flex',
-                  gap: 3,
-                  position: 'relative',
-                  '&:not(:last-child)::after': {
-                    content: '""',
-                    position: 'absolute',
-                    left: 24,
-                    top: 64,
-                    bottom: -32,
-                    width: 2,
-                    backgroundColor: 'primary.main',
-                  },
-                }}
-              >
+        {showPlaceholder ? (
+          <Card sx={{ maxWidth: 720, mx: 'auto', textAlign: 'center', py: 6, px: 4 }}>
+            <CardContent>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                <ScheduleIcon sx={{ fontSize: 48, color: 'primary.main' }} />
+              </Box>
+              <Typography variant="h4" sx={{ color: 'secondary.main', mb: 1 }}>
+                Coming Soon
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+                We're finalizing the wedding schedule. Please check back soon for the full timeline.
+              </Typography>
+              {/* <Button variant="text" onClick={() => setShowPlaceholder(false)}>
+                View Full Schedule
+              </Button> */}
+            </CardContent>
+          </Card>
+        ) : (
+          <Box sx={{ maxWidth: 800, mx: 'auto' }}>
+            <Stack spacing={4}>
+              {scheduleItems.map((item, index) => (
                 <Box
+                  key={index}
                   sx={{
-                    flexShrink: 0,
-                    width: 48,
-                    height: 48,
-                    borderRadius: '50%',
-                    backgroundColor: 'primary.main',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 1,
+                    gap: 3,
+                    position: 'relative',
+                    '&:not(:last-child)::after': {
+                      content: '""',
+                      position: 'absolute',
+                      left: 24,
+                      top: 64,
+                      bottom: -32,
+                      width: 2,
+                      backgroundColor: 'primary.main',
+                    },
                   }}
                 >
-                  <ScheduleIcon sx={{ color: 'white', fontSize: 24 }} />
-                </Box>
-                <Box sx={{ flex: 1, pt: 0.5 }}>
-                  <Paper
-                    elevation={3}
+                  <Box
                     sx={{
-                      p: 3,
-                      backgroundColor: 'white',
-                      borderRadius: 2,
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'scale(1.02)',
-                      },
+                      flexShrink: 0,
+                      width: 48,
+                      height: 48,
+                      borderRadius: '50%',
+                      backgroundColor: 'primary.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 1,
                     }}
                   >
-                    <Typography
-                      variant="h6"
+                    <ScheduleIcon sx={{ color: 'white', fontSize: 24 }} />
+                  </Box>
+                  <Box sx={{ flex: 1, pt: 0.5 }}>
+                    <Paper
+                      elevation={3}
                       sx={{
-                        color: 'primary.main',
-                        fontWeight: 700,
-                        mb: 1,
+                        p: 3,
+                        backgroundColor: 'white',
+                        borderRadius: 2,
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                          transform: 'scale(1.02)',
+                        },
                       }}
                     >
-                      {item.time}
-                    </Typography>
-                    <Typography variant="h5" sx={{ mb: 1, color: 'secondary.main' }}>
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ mb: 1, color: 'text.secondary' }}>
-                      {item.description}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: 'primary.main',
-                        fontStyle: 'italic',
-                      }}
-                    >
-                      📍 {item.location}
-                    </Typography>
-                  </Paper>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: 'primary.main',
+                          fontWeight: 700,
+                          mb: 1,
+                        }}
+                      >
+                        {item.time}
+                      </Typography>
+                      <Typography variant="h5" sx={{ mb: 1, color: 'secondary.main' }}>
+                        {item.title}
+                      </Typography>
+                      <Typography variant="body1" sx={{ mb: 1, color: 'text.secondary' }}>
+                        {item.description}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: 'primary.main',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        📍 {item.location}
+                      </Typography>
+                    </Paper>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
-          </Stack>
-        </Box>
+              ))}
+            </Stack>
+
+            <Box sx={{ textAlign: 'center', mt: 4 }}>
+              <Button variant="text" onClick={() => setShowPlaceholder(true)}>
+                Show Coming Soon
+              </Button>
+            </Box>
+          </Box>
+        )}
       </Container>
     </Box>
   );

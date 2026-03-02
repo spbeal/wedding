@@ -127,7 +127,6 @@ function App() {
         <NavBar activeSection={activeSection} />
         <Hero />
       </Box>
-      <Photos />
       <SaveTheDate />
       <Location />
       <Schedule />
