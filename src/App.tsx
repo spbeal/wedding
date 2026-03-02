@@ -2,7 +2,6 @@ import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import { useState, useEffect, useMemo } from 'react';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
-import Photos from './components/Photos';
 import SaveTheDate from './components/SaveTheDate';
 import Schedule from './components/Schedule';
 import Location from './components/Location';
