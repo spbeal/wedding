@@ -9,6 +9,7 @@ import Menu from './components/Menu';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
 import ColorPicker from './components/ColorPicker';
+import Registry from './components/Registry';
 
 function App() {
   const [activeSection, setActiveSection] = useState('');
@@ -95,7 +96,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'photos', 'save-the-date', 'schedule', 'location', 'menu', 'rsvp'];
+      const sections = ['hero', 'photos', 'save-the-date', 'location', 'registry', 'schedule', 'menu', 'rsvp'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -128,6 +129,7 @@ function App() {
       </Box>
       <SaveTheDate />
       <Location />
+      <Registry />
       <Schedule />
       <Menu />
       <RSVP />

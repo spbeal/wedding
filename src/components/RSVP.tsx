@@ -240,7 +240,7 @@ export default function RSVP() {
                 />
 
                 <FormControl component="fieldset" sx={{ mb: 2 }}>
-                  <FormLabel component="legend">Will you attend?</FormLabel>
+                  <FormLabel component="legend">Will you be attending?</FormLabel>
                   <RadioGroup
                     row
                     name="attending"
