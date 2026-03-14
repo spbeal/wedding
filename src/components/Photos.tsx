@@ -1,19 +1,7 @@
-import { Box, Container, Typography, Grid, Card, CardMedia } from '@mui/material';
-import { useState } from 'react';
-
-const photoPaths: string[] = [];
+import { Box, Container, Typography } from '@mui/material';
+import SectionDivider from './SectionDivider';
 
 export default function Photos() {
-  const [loadedImages, setLoadedImages] = useState<Set<string | unknown>>(new Set());
-
-  const handleImageLoad = (path: string | unknown) => {
-    setLoadedImages((prev) => new Set(prev).add(path));
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.style.display = 'none';
-  };
-
   return (
     <Box
       id="photos"
@@ -45,67 +33,12 @@ export default function Photos() {
           Our Story
         </Typography>
 
-        {photoPaths.length > 0 ? (
-          <Grid container spacing={3}>
-            {photoPaths.map((path, index) => (
-              <Grid key={index}>
-                <Card
-                  sx={{
-                    overflow: 'hidden',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: 6,
-                    },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={path}
-                    alt={`Wedding photo ${index + 1}`}
-                    onLoad={() => handleImageLoad(path)}
-                    onError={handleImageError}
-                    sx={{
-                      height: 300,
-                      objectFit: 'cover',
-                      display: loadedImages.has(path) ? 'block' : 'none',
-                    }}
-                  />
-                  {!loadedImages.has(path) && (
-                    <Box
-                      sx={{
-                        height: 300,
-                        backgroundColor: 'primary.light',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        Photo {index + 1}
-                      </Typography>
-                    </Box>
-                  )}
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        ) : (
-          <Box
-            sx={{
-              textAlign: 'center',
-              py: 8,
-              px: 2,
-            }}
-          >
-            <Typography variant="h5" sx={{ mb: 2, color: 'text.secondary' }}>
-              Our love story is just beginning...
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              Photos coming soon!
-            </Typography>
-          </Box>
-        )}
+        <Box sx={{ maxWidth: 800, mx: 'auto', textAlign: 'center', mb: 4 }}>
+          <Typography variant="body1" sx={{ color: 'text.primary', whiteSpace: 'pre-line' }}>
+            We met swing dancing in Moscow ID on a Wednesday night in March 2024. We immediately realized we enjoyed each others' presence and started dating from there.
+          </Typography>
+        </Box>
+        <SectionDivider />
       </Container>
     </Box>
   );
