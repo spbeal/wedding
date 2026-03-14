@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Card, CardContent, CardActions, Button, Typography, Avatar } from '@mui/material';
 
 const registries = [
