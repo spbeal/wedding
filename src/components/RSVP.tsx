@@ -299,14 +299,31 @@ export default function RSVP() {
                     </Box>
 
                     <Box sx={{ mb: 2 }}>
-                      <TextField
-                        label="Guest names (press enter after each name)"
-                        placeholder="e.g. Samuel Beal"
-                        value={guestInput}
-                        onChange={(e) => setGuestInput(e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.keyCode === 13) { // Ensure compatibility across devices
-                            e.preventDefault();
+                      <Box sx={{ display: "flex", gap: 1, mb: 1, alignItems: "center" }}>
+                        <TextField
+                          label="Guest names (press enter or tap add)"
+                          placeholder="e.g. Samuel Beal"
+                          value={guestInput}
+                          onChange={(e) => setGuestInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.keyCode === 13) {
+                              e.preventDefault();
+                              const v = guestInput.trim();
+                              if (v) {
+                                setFormData((prev: any) => ({
+                                  ...prev,
+                                  guestNames: [...(prev.guestNames || []), v],
+                                }));
+                                setGuestInput("");
+                              }
+                            }
+                          }}
+                          fullWidth
+                        />
+                        <Button
+                          variant="contained"
+                          sx={{ height: "50px", width: "100px" }}
+                          onClick={() => {
                             const v = guestInput.trim();
                             if (v) {
                               setFormData((prev: any) => ({
@@ -315,11 +332,11 @@ export default function RSVP() {
                               }));
                               setGuestInput("");
                             }
-                          }
-                        }}
-                        fullWidth
-                        sx={{ mb: 1 }}
-                      />
+                          }}
+                        >
+                          Add
+                        </Button>
+                      </Box>
 
                       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
                         {(formData.guestNames || []).map(
