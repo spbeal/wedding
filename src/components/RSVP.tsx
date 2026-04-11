@@ -305,7 +305,7 @@ export default function RSVP() {
                         value={guestInput}
                         onChange={(e) => setGuestInput(e.target.value)}
                         onKeyDown={(e) => {
-                          if (e.key === "Enter") {
+                          if (e.key === "Enter" || e.keyCode === 13) { // Ensure compatibility across devices
                             e.preventDefault();
                             const v = guestInput.trim();
                             if (v) {
