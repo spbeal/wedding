@@ -88,6 +88,53 @@ export default function Schedule() {
           Wedding Schedule
         </Typography>
 
+        <Box
+          sx={{
+            maxWidth: 720,
+            mx: 'auto',
+            mb: 6,
+            p: 3,
+            backgroundColor: 'background.default',
+            borderRadius: 2,
+            textAlign: 'center',
+            border: '3px solid',
+            borderColor: 'primary.main',
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'secondary.main',
+              fontWeight: 600,
+              mb: 1,
+            }}
+          >
+            Dress Code
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: 'text.primary',
+              fontSize: '1.1rem',
+              mb: 1,
+              fontWeight: 500,
+            }}
+          >
+            Semi-Formal Attire
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              color: '#333333',
+              opacity: 1,
+              fontStyle: 'italic',
+              fontWeight: 500,
+            }}
+          >
+            Avoid Dusty Lilac and grey, but you can use reasonable discretion.
+          </Typography>
+        </Box>
+
         {showPlaceholder ? (
           <Card sx={{ maxWidth: 720, mx: 'auto', textAlign: 'center', py: 6, px: 4 }}>
             <CardContent>
