@@ -53,116 +53,80 @@ export default function Menu() {
           Menu
         </Typography>
 
-        {showPlaceholder ? (
-          <Card
-            sx={{
-              maxWidth: 680,
-              mx: 'auto',
-              textAlign: 'center',
-              py: 6,
-              px: 4,
-              bgcolor: 'background.paper',
-            }}
-          >
-            <CardContent>
-              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-                <RestaurantIcon sx={{ fontSize: 48, color: 'primary.main' }} />
-              </Box>
-              <Typography variant="h4" sx={{ color: 'secondary.main', mb: 1 }}>
-                Coming Soon
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                We're finalizing the menu. Please check back soon for details.
-              </Typography>
-              {/* <Button variant="text" onClick={() => setShowPlaceholder(false)}>
-                View Full Menu
-              </Button> */}
-            </CardContent>
-          </Card>
-        ) : (
-          <>
-            <Grid container spacing={4} justifyContent="center">
-              {menuCategories.map((category, index) => (
-                <Grid key={index}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-8px)',
-                        boxShadow: 6,
-                      },
-                    }}
-                  >
-                    <CardContent>
-                      <Box
+          <Grid container spacing={4} justifyContent="center">
+            {menuCategories.map((category, index) => (
+              <Grid key={index}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: 6,
+                    },
+                  }}
+                >
+                  <CardContent>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mb: 2,
+                      }}
+                    >
+                      <RestaurantIcon
                         sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          mb: 2,
+                          fontSize: 40,
+                          color: 'primary.main',
                         }}
-                      >
-                        <RestaurantIcon
+                      />
+                    </Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: 'center',
+                        mb: 3,
+                        color: 'secondary.main',
+                        borderBottom: '2px solid',
+                        borderColor: 'primary.main',
+                        pb: 1,
+                      }}
+                    >
+                      {category.title}
+                    </Typography>
+                    <List>
+                      {category.items.map((item, itemIndex) => (
+                        <ListItem
+                          key={itemIndex}
                           sx={{
-                            fontSize: 40,
-                            color: 'primary.main',
+                            py: 1,
+                            borderBottom: itemIndex < category.items.length - 1 ? '1px solid' : 'none',
+                            borderColor: 'primary.light',
                           }}
-                        />
-                      </Box>
-                      <Typography
-                        variant="h5"
-                        sx={{
-                          textAlign: 'center',
-                          mb: 3,
-                          color: 'secondary.main',
-                          borderBottom: '2px solid',
-                          borderColor: 'primary.main',
-                          pb: 1,
-                        }}
-                      >
-                        {category.title}
-                      </Typography>
-                      <List>
-                        {category.items.map((item, itemIndex) => (
-                          <ListItem
-                            key={itemIndex}
-                            sx={{
-                              py: 1,
-                              borderBottom: itemIndex < category.items.length - 1 ? '1px solid' : 'none',
-                              borderColor: 'primary.light',
-                            }}
-                          >
-                            <ListItemText
-                              primary={item}
-                              primaryTypographyProps={{
-                                sx: {
-                                  color: 'text.primary',
-                                  '&::before': {
-                                    content: '"• "',
-                                    color: 'primary.main',
-                                    fontWeight: 'bold',
-                                    marginRight: 1,
-                                  },
+                        >
+                          <ListItemText
+                            primary={item}
+                            primaryTypographyProps={{
+                              sx: {
+                                color: 'text.primary',
+                                '&::before': {
+                                  content: '"• "',
+                                  color: 'primary.main',
+                                  fontWeight: 'bold',
+                                  marginRight: 1,
                                 },
-                              }}
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-
-            <Box sx={{ textAlign: 'center', mt: 4 }}>
-              <Button variant="text" onClick={() => setShowPlaceholder(true)}>
-                Show Coming Soon
-              </Button>
-            </Box>
-          </>
-        )}
+                              },
+                            }}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
       </Container>
     </Box>
   );
