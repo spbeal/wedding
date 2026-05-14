@@ -131,7 +131,7 @@ export default function Schedule() {
               fontWeight: 500,
             }}
           >
-            Avoid Dusty Lilac and grey, but you can use reasonable discretion.
+            Avoid Dusty Lilac and tan, but you can use reasonable discretion.
           </Typography>
         </Box>
 
