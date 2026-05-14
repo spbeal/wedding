@@ -9,41 +9,18 @@ interface MenuCategory {
 
 const menuCategories: MenuCategory[] = [
   {
-    title: 'Appetizers',
+    title: 'The Foothills',
     items: [
-      'Bruschetta with Fresh Tomatoes',
-      'Spinach and Artichoke Dip',
-      'Caprese Skewers',
-    ],
-  },
-  {
-    title: 'Main Course',
-    items: [
-      'Herb-Crusted Salmon',
-      'Beef Tenderloin with Red Wine Sauce',
-      'Vegetarian Risotto',
-    ],
-  },
-  {
-    title: 'Dessert',
-    items: [
-      'Wedding Cake',
-      'Chocolate Mousse',
-      'Fresh Fruit Platter',
-    ],
-  },
-  {
-    title: 'Beverages',
-    items: [
-      'Wine Selection',
-      'Signature Cocktails',
-      'Non-Alcoholic Options',
+      'Lemon or BBQ Chicken Breasts',
+      'Sliced Bread with Honey Butter',
+      'Salad bar',
+      'Fruit Platter',
     ],
   },
 ];
 
 export default function Menu() {
-  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const [showPlaceholder, setShowPlaceholder] = useState(false);
 
   return (
     <Box
