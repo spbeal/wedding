@@ -20,7 +20,6 @@ const menuCategories: MenuCategory[] = [
 ];
 
 export default function Menu() {
-  const [showPlaceholder, setShowPlaceholder] = useState(false);
 
   return (
     <Box
