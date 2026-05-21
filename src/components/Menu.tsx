@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText, Button } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText } from '@mui/material';
 import { Restaurant as RestaurantIcon } from '@mui/icons-material';
 
 interface MenuCategory {
@@ -10,9 +10,9 @@ const menuCategories: MenuCategory[] = [
   {
     title: 'The Foothills',
     items: [
-      'Lemon or BBQ Chicken Breasts',
+      'Lemon and BBQ Chicken (DF, GF)',
       'Sliced Bread with Honey Butter',
-      'Salad bar',
+      'Salad (Will be determined soon)',
       'Fruit Platter',
     ],
   },
@@ -51,80 +51,80 @@ export default function Menu() {
           Menu
         </Typography>
 
-          <Grid container spacing={4} justifyContent="center">
-            {menuCategories.map((category, index) => (
-              <Grid key={index}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: 6,
-                    },
-                  }}
-                >
-                  <CardContent>
-                    <Box
+        <Grid container spacing={4} justifyContent="center">
+          {menuCategories.map((category, index) => (
+            <Grid key={index}>
+              <Card
+                sx={{
+                  height: '100%',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: 6,
+                  },
+                }}
+              >
+                <CardContent>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mb: 2,
+                    }}
+                  >
+                    <RestaurantIcon
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        mb: 2,
+                        fontSize: 40,
+                        color: 'primary.main',
                       }}
-                    >
-                      <RestaurantIcon
+                    />
+                  </Box>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      textAlign: 'center',
+                      mb: 3,
+                      color: 'secondary.main',
+                      borderBottom: '2px solid',
+                      borderColor: 'primary.main',
+                      pb: 1,
+                    }}
+                  >
+                    {category.title}
+                  </Typography>
+                  <List>
+                    {category.items.map((item, itemIndex) => (
+                      <ListItem
+                        key={itemIndex}
                         sx={{
-                          fontSize: 40,
-                          color: 'primary.main',
+                          py: 1,
+                          borderBottom: itemIndex < category.items.length - 1 ? '1px solid' : 'none',
+                          borderColor: 'primary.light',
                         }}
-                      />
-                    </Box>
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        textAlign: 'center',
-                        mb: 3,
-                        color: 'secondary.main',
-                        borderBottom: '2px solid',
-                        borderColor: 'primary.main',
-                        pb: 1,
-                      }}
-                    >
-                      {category.title}
-                    </Typography>
-                    <List>
-                      {category.items.map((item, itemIndex) => (
-                        <ListItem
-                          key={itemIndex}
-                          sx={{
-                            py: 1,
-                            borderBottom: itemIndex < category.items.length - 1 ? '1px solid' : 'none',
-                            borderColor: 'primary.light',
-                          }}
-                        >
-                          <ListItemText
-                            primary={item}
-                            primaryTypographyProps={{
-                              sx: {
-                                color: 'text.primary',
-                                '&::before': {
-                                  content: '"• "',
-                                  color: 'primary.main',
-                                  fontWeight: 'bold',
-                                  marginRight: 1,
-                                },
+                      >
+                        <ListItemText
+                          primary={item}
+                          primaryTypographyProps={{
+                            sx: {
+                              color: 'text.primary',
+                              '&::before': {
+                                content: '"• "',
+                                color: 'primary.main',
+                                fontWeight: 'bold',
+                                marginRight: 1,
                               },
-                            }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+                            },
+                          }}
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
