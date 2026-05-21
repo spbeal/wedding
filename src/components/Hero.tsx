@@ -63,9 +63,9 @@ export default function Hero() {
                 fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
                 fontStyle: 'italic',
                 fontWeight: 300,
-                textTransform: 'uppercase', // Keeps it feeling like a legend
+                textTransform: 'uppercase',
                 letterSpacing: '4px',
-                color: '#D4AF37', // A subtle gold/bronze to match Viking shields
+                color: (theme) => theme.wedding.accent,
               }}
             >
               The Adventure Begins
