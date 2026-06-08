@@ -295,7 +295,7 @@ export default function Schedule() {
                   fontWeight: 500,
                 }}
               >
-                ✨ Detailed timeline for the wedding party, family members, and vendors.
+                ✨ Detailed timeline for the wedding party, family members, and vendors. Tentative to change.
               </Typography>
             </Fade>
           )}
