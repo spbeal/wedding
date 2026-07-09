@@ -36,14 +36,14 @@ const iconMap: Record<IconType, React.ReactNode> = {
 
 const guestSchedule: ScheduleItem[] = [
   {
-    time: '1:00 PM',
+    time: '1:30 PM',
     title: 'Guest Arrival',
     description: 'Doors open, welcome music starts playing, and guests take their seats.',
     location: 'Venue',
     iconType: 'arrival',
   },
   {
-    time: '2:00 PM',
+    time: '2:30 PM',
     title: 'The Ceremony',
     description: 'Join us as we exchange vows and say our "I dos". Please arrive early to settle in.',
     location: 'Riverfront',
@@ -102,14 +102,14 @@ const vipSchedule: ScheduleItem[] = [
     iconType: 'photo',
   },
   {
-    time: '1:00 PM',
+    time: '1:30 PM',
     title: 'Guest Arrival',
     description: 'Welcome music begins; ushers guide guests to their seats.',
     location: 'Venue',
     iconType: 'arrival',
   },
   {
-    time: '2:00 PM',
+    time: '2:30 PM',
     title: 'The Ceremony',
     description: 'Join us as we exchange vows and say our "I dos". Please arrive early to settle in.',
     location: 'Riverfront',
